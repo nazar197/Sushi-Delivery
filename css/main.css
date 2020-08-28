@@ -1,9 +1,11 @@
-body, html {
+body,
+html {
 	background-color: #F8F9F9;
 	height: 100%;
 }
 
-h3, h4 {
+h3,
+h4 {
 	font-family: 'Merriweather', serif;
 
 }
@@ -14,16 +16,18 @@ h3, h4 {
 }
 
 .product-img {
-	width: 265px;
+	width: 180px;
+	max-width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .item-title {
-    font-size: 1.5rem;
-    font-weight: 500;
+	font-size: 1.5rem;
+	font-weight: 500;
 	font-family: 'Merriweather', serif;
+	line-height: 1.4;
 	height: 70px;
 }
 
@@ -56,8 +60,8 @@ h3, h4 {
 }
 
 .items__control:hover {
-    background: #eb5a1e;
-    color: #FFF;
+	background: #eb5a1e;
+	color: #FFF;
 }
 
 .items__current {
@@ -85,7 +89,7 @@ h3, h4 {
 }
 
 .price__weight {
-	color: #6c757d!important;
+	color: #6c757d !important;
 	font-size: 80%;
 	line-height: 1;
 }
@@ -97,47 +101,48 @@ h3, h4 {
 }
 
 .btn-outline-warning {
-    color: #eb5a1e;
-    border-color: #eb5a1e;
+	color: #eb5a1e;
+	border-color: #eb5a1e;
 }
 
 .btn-outline-warning:hover {
-    color: #FFF;
-    background-color: #eb5a1e;
-    border-color: #eb5a1e;
+	color: #FFF;
+	background-color: #eb5a1e;
+	border-color: #eb5a1e;
 }
 
 .cart-item__top {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
+	flex-direction: column;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #dee2e6;
+	margin: 0 auto;
 	margin-bottom: 15px;
 }
 
 .cart-item__img img {
-	max-width: 100px;
+	max-width: 140px;
 	height: auto;
 }
 
 .cart-item__desc {
-	padding-top: 15px;
-	padding-left: 15px;
+	text-align: center;
 }
 
 .cart-item__title {
 	font-family: 'Merriweather', serif;
 	font-size: 16px;
-    line-height: 1.2;
+	line-height: 1.2;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
 
 .cart-item__weight {
-    color: #6c757d!important;
-    font-size: 80%;
-    line-height: 1;
-    margin-bottom: 15px;
+	color: #6c757d !important;
+	font-size: 80%;
+	line-height: 1;
+	margin-bottom: 15px;
 }
 
 .cart-item__details {
@@ -152,11 +157,11 @@ h3, h4 {
 }
 
 .cart-total {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 500;
 }
 
-.free {
+.free-delivery {
 	color: #0EA107;
 }
 
@@ -164,10 +169,62 @@ h3, h4 {
 	color: #EB5A1E;
 }
 
-.rouble {
+.currency {
 	color: #EB5A1E;
 }
 
 .none {
 	display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.item-title {
+		font-size: 1.2rem;
+		height: 50px;
+	}
+
+	.cart-item__desc {
+		padding: 15px 0;
+	}
+
+	.cart-item__top,
+	.cart-item__details,
+	.details-wrapper {
+		flex-direction: column;
+	}
+
+	.cart-item__top {
+		align-items: center;
+		text-align: center;
+	}
+
+	.price {
+		display: flex;
+		margin-top: 15px;
+	}
+
+	.price__currency {
+		margin-left: 20px;
+	}
+
+	.price__weight {
+		line-height: 2.5;
+	}
+
+	.form-control {
+		font-size: .8rem;
+	}
+
+	#cart h5,
+	.cart-total span {
+		font-size: 1rem;
+	}
+
+	#order-form .card-title {
+		font-size: 0.9rem;
+	}
+
+	.cart-total p {
+		margin-bottom: 0;
+	}
 }

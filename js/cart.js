@@ -1,7 +1,7 @@
 let cartWrapper = document.querySelector('.cart-wrapper');
 let cartButtons = document.querySelectorAll('[data-cart]');
 
-cartButtons.forEach(function (item) {
+cartButtons.forEach((item) => {
 	item.addEventListener('click', function () {
 		let card = this.closest('.card');
 		let id = card.dataset.id;
@@ -30,6 +30,8 @@ cartButtons.forEach(function (item) {
 										<div class="cart-item__title">${title}</div>
 										<div class="cart-item__weight">${itemsInBox} / ${weight}</div>
 
+										
+										</div>
 										<!-- cart-item__details -->
 										<div class="cart-item__details">
 
@@ -45,8 +47,6 @@ cartButtons.forEach(function (item) {
 
 										</div>
 										<!-- // cart-item__details -->
-
-									</div>
 								</div>
 							</div>`;
 
@@ -73,17 +73,21 @@ function toggleCartStatus() {
 
 	let totalPrice = 0;
 
-	cartWrapper.querySelectorAll('.cart-item').forEach(function(item){
+	cartWrapper.querySelectorAll('.cart-item').forEach((item) => {
 		let counter = item.querySelector('[data-counter]').innerText;
 		let priceOneItem = item.querySelector('.price__currency').innerText;
-		console.log(counter);
-		console.log(priceOneItem);
 		let price = parseInt(counter) * parseInt(priceOneItem);
-        console.log("toggleCartStatus -> price", price);
 		totalPrice = totalPrice + price;
-	})
+	});
 
-	console.log(totalPrice);
 	document.querySelector('.total-price').innerText = totalPrice;
+
+	if (totalPrice >= 1000) {
+		document.querySelector('.free-delivery').classList.remove('none');
+		document.querySelector('.paid-delivery').classList.add('none');
+	} else {
+		document.querySelector('.free-delivery').classList.add('none');
+		document.querySelector('.paid-delivery').classList.remove('none');
+	}
 
 }

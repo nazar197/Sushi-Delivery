@@ -1,6 +1,6 @@
 let body = document.querySelector('body');
 
-body.addEventListener('click', function (event) {
+body.addEventListener('click', (event) => {
 	if (event.target.hasAttribute('data-action')) {
 		let counterWrapper = event.target.closest('.counter-wrapper');
 		let counter = counterWrapper.querySelector('[data-counter]');
@@ -10,7 +10,7 @@ body.addEventListener('click', function (event) {
 		} else {
 			if (parseInt(counter.innerText) > 1) {
 				counter.innerText = --counter.innerText;
-			} else if ( parseInt(counter.innerText) === 1 && counter.closest('.cart-wrapper') ) {
+			} else if (parseInt(counter.innerText) === 1 && counter.closest('.cart-wrapper')) {
 				counter.closest('.cart-item').remove();
 			}
 		}
